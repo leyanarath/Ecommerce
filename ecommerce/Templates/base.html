@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="{% block metadesc %}{% endblock %}">
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"  >
+    <link href="{% static 'css/custem.css' %}" rel="stylesheet"  >
+<!--    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+{% include 'header.html' %}
+{% include 'nav.html' %}
+{% block content %}
+{% endblock %}
+{% include 'footer.html' %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+
+</body>
+</html>

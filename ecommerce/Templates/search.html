@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    online e comeerce websiye
+{% endblock %}
+{% block title %}
+    search bar
+{% endblock %}
+{% block content %}
+<div>
+    <p class="text-center my_search_text">
+        you have searched for <b>"{{ query }}"</b>
+    </p>
+</div>
+<div class="container">
+    <div class="row">
+        {% for Product in products %}
+            <div class="col-auto">
+
+            <div class="card" style="width: 18rem; ">
+                <div>
+                    <a href="{{ Product.get_url}}"><img src="{{Product.image.url}}" alt="{{Product.name}}" class="card-img-top my_img_card "></a>
+                    <div>
+                    <h5 class="card-title">{{Product.name}}</h5>
+<!--                    <p class="card-text">{{Product.desc}}</p>-->
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{Product.desc}}</p>
+                    <a href="#" class="card-link btn btn-primary">Add To Cart</a>
+                    <a href="#" class="card-link btn btn-success">Buy Now</a>
+
+                </div>
+            </div>
+        </div>
+
+
+        {% empty %}
+        <div class="row mx-auto">
+            <p class="text-center my_search_text">Zero results found</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
